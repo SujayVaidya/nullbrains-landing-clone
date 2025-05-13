@@ -14,7 +14,7 @@ A pixel-perfect implementation of the provided NullBrains design using Vite + Re
 ```bash
 https://github.com/SujayVaidya/nullbrains-landing-clone.git
 
-cd unisouk-vite-react-ts
+cd nullbrains-landing-clone
 
 npm install
 ```
