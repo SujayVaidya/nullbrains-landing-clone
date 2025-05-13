@@ -1,6 +1,6 @@
 # NullBrains - A SAAS Landing Page
 
-A pixel-perfect implementation of the provided NullBrains design using Vite + React + TypeScript.
+A pixel-perfect implementation NullBrains design using Vite + React + TypeScript.
 
 ## Deployed at - https://nullbrains-sv.netlify.app/
 
