@@ -1,0 +1,45 @@
+.trusted-by {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  background-color: #ffffff;
+}
+
+.trusted-by__subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 40px;
+}
+
+.trusted-by__logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px; /* equal spacing between icons */
+}
+
+.trusted-by__logo {
+  width: 150px; /* icon size */
+  color: #4b5563;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.trusted-by__logo:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .trusted-by__logos {
+    gap: 40px;
+  }
+  .trusted-by__logo {
+    font-size: 36px;
+  }
+}

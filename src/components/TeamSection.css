@@ -1,0 +1,142 @@
+:root {
+  --pill-color: #eef5ff;
+}
+
+.team-section {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  overflow: visible;
+  padding: 10px 0;
+}
+
+/* the full-bleed pill on the right */
+.team-section__pill {
+  position: absolute;
+  top: 40px;
+  right: -170px;
+  height: 96px;
+  width: 250px;
+  max-width: none;
+  background: var(--pill-color);
+  border-radius: 28px 0 0 28px;
+  z-index: 0;
+}
+
+.team-section__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: left; /* center-align everything */
+}
+
+.team-subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #3c82f6;
+  margin: 0 0 12px;
+}
+
+.team-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111;
+  margin: 0 0 48px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-wrapper {
+  --bg: #fff;
+  --ring: var(--pill-color);
+
+  position: relative;
+  width: 136px;
+  height: 136px;
+
+  margin-bottom: 16px;
+}
+
+/* square-behind-circle, same color as the ring */
+.photo-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 156px;
+  height: 136px;
+  background-color: var(--ring);
+  z-index: 0;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 6px;
+}
+
+/* the pastel circle + ring on top */
+.photo-wrapper .photo-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg);
+  border: 8px solid var(--ring);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 6px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 4px;
+}
+
+.card-role a {
+  font-size: 14px;
+  color: #3c82f6;
+  text-decoration: none;
+}
+
+.card-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.card-social a {
+  font-size: 18px;
+  color: #a0a0a0;
+}

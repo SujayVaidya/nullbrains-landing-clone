@@ -1,0 +1,158 @@
+/* BlogSection.css */
+
+/* Container & Header */
+.blog-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.blog-header h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.blog-header p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* Grid Layout */
+.blog-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.blog-grid.featured {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.blog-grid.small {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .blog-grid.featured,
+  .blog-grid.small {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-grid.featured,
+  .blog-grid.small {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Base */
+.card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Featured Cards */
+.featured-card {
+  aspect-ratio: 4 / 5;
+  background-size: contain;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+}
+
+/* Featured Category Pill */
+.featured-pill {
+  position: absolute;
+  top: 16rem;
+  left: 1rem;
+  background: #fff;
+  color: #111827;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+/* Featured Category Pill Small Cards */
+.featured-pill-small {
+  position: absolute;
+  top: 9rem;
+  left: 1rem;
+  background: #fff;
+  color: #111827;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+/* Featured Text */
+.text {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  color: #fff;
+}
+
+.text h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.text p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Small Cards */
+.small-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+}
+
+.small-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.small-card .content {
+  padding: 1rem;
+}
+
+.small-card .category-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.small-card h4 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.small-card p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+}

@@ -1,0 +1,29 @@
+/* src/components/Footer.css */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #6b7280;
+}
+.footer__nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.footer__nav a {
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.footer__nav a:hover {
+  color: var(--clr-primary);
+}
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.footer__copy {
+  font-size: 0.8rem;
+}

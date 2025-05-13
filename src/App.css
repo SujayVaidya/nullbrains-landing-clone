@@ -1,0 +1,8 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -1,0 +1,241 @@
+/* 1) Prevent any horizontal scroll */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2) Base header (mobile‐first) */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1002;
+}
+
+/* Logo */
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ham / × buttons */
+.header__open-btn,
+.header__close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--clr-text, #333);
+  margin-left: auto;
+  z-index: 1003;
+}
+/* default (closed) */
+.header__open-btn {
+  display: block;
+}
+.header__close-btn {
+  display: none;
+}
+/* when open */
+.header.mobile-open .header__open-btn {
+  display: none;
+}
+.header.mobile-open .header__close-btn {
+  display: block;
+}
+
+/* 3) Mobile drawer */
+.header__navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 75%;
+  max-width: 300px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+.header.mobile-open .header__navigation {
+  transform: translateX(0);
+}
+
+/* backdrop */
+.nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* mobile links */
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.header__nav-link {
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+}
+.header__nav-link:hover,
+.header__nav-link--active {
+  color: var(--clr-primary, #007bff);
+  border-bottom: 2px solid var(--clr-primary, #007bff);
+}
+
+/* mobile search icon */
+.header__icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--clr-text, #333);
+  margin-top: 2rem;
+  align-self: flex-start;
+}
+
+/* mobile actions */
+.header__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.btn {
+  font-size: 0.95rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+.btn--text {
+  background: none;
+  color: var(--clr-text, #333);
+}
+.btn--solid {
+  background: var(--clr-primary, #007bff);
+  color: #fff;
+}
+.btn--solid:hover {
+  background: #0056b3;
+}
+
+/* modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1004;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+.form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.show_act-div-desktop {
+  display: none;
+}
+/* 4) Tablet & desktop (≥768px) */
+@media (min-width: 768px) {
+  /* hide mobile-only stuff */
+  .header__open-btn,
+  .header__close-btn,
+  .nav-backdrop {
+    display: none;
+  }
+
+  /* keep logo on left, nav+search+actions inline on right */
+  .header {
+    justify-content: space-between;
+  }
+
+  .header__navigation {
+    position: static;
+    transform: none !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    width: auto;
+    max-width: none;
+  }
+
+  /* push search+actions to the far right */
+  .header__nav {
+    flex-direction: row;
+    gap: 2rem;
+    margin: 0;
+    margin-right: auto;
+  }
+
+  /* search icon inline */
+  .header__icon-btn {
+    margin: 0;
+    align-self: center;
+  }
+
+  /* actions inline */
+  .header__actions {
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+  }
+  .show_act-div-desktop {
+    display: flex;
+  }
+}
